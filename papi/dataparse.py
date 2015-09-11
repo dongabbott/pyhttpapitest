@@ -6,15 +6,18 @@ import json
 import xmltodict
 from pyapilog import pyapilog
 
+
+# python读取csv文件
+
+
+
 # 解析json字符串
 class jsonprase(object):
     def __init__(self, json_value):
         try:
-            eval(json_value)
             self.json_value = json.loads(json_value)
-        except Exception, e :
-            raise ValueError('must be a json str value')
-
+        except TypeError, e:
+            pyapilog().error(u'%s不是json字符串' % json_value)
     def find_json_node_by_xpath(self, xpath):
         elem = self.json_value
         nodes = xpath.strip("/").split("/")

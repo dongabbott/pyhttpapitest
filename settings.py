@@ -25,7 +25,8 @@ LOGPATH = os.path.join(os.path.dirname(__file__), 'log',).replace('\\', '/')
 LOGLEVEL = 2
 
 #Api测试地址
-SERVER = 'webapi.yilule.com:5580'
+SERVER = 'http://test.webapi.yilule.com'
+PORT = 5580
 
 # 数据库配置，支持MYSQL、MSSQL、ORACLE
 DATABASE = {
@@ -36,4 +37,3 @@ DATABASE = {
     "PWD": "sqlQ_1",
     "DATABASE": "yiluletest1"
 }
-

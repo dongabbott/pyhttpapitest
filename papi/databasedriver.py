@@ -64,7 +64,7 @@ def execsql(sql):
     user = config.get("USER")
     password = config.get("PWD")
     database = config.get("DATABASE")
-    if driver == "MYSQL":
+    if driver == "MSSQL":
         try:
             sql_result = sqldriver(
                 host=host,
@@ -101,5 +101,6 @@ def execsql(sql):
             return sql_result
         except Exception, e:
             pyapilog().error(e)
+
     else:
         pyapilog().error(u"[%s]数据库配置支持MYSQL、MSSQL、ORACLE" % driver)
