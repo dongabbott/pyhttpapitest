@@ -76,8 +76,10 @@ def execsql(sql):
             return sql_result
         except Exception, e:
             pyapilog().error(e)
-
-    elif driver == "MSSQL":
+    else:
+        pyapilog().error(u"[%s]数据库配置支持MYSQL、MSSQL、ORACLE" % driver)
+    '''
+    elif driver == "MYSQL":
         try:
             sql_result = sqldriver(
                 host=host,
@@ -101,6 +103,5 @@ def execsql(sql):
             return sql_result
         except Exception, e:
             pyapilog().error(e)
+    '''
 
-    else:
-        pyapilog().error(u"[%s]数据库配置支持MYSQL、MSSQL、ORACLE" % driver)

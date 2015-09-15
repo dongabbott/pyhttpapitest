@@ -7,10 +7,6 @@ import xmltodict
 from pyapilog import pyapilog
 
 
-# python读取csv文件
-
-
-
 # 解析json字符串
 class jsonprase(object):
     def __init__(self, json_value):
